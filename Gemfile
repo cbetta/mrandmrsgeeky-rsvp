@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'foreman'
+gem 'simple_form'
+gem 'valid_email'
 
 group :production do
   gem 'rails_12factor'

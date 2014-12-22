@@ -1,0 +1,5 @@
+<%= simple_form_for @guest do |form| %>
+  <%= form.input :state, collection: Guest.statuses, as: :radio_buttons %>
+  <%= form.input :email, disabled: true %>
+  <%= form.submit "Save" %>
+<% end %>
