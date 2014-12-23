@@ -1,5 +1,14 @@
-<%= simple_form_for @guest do |form| %>
-  <%= form.input :state, collection: Guest.statuses, as: :radio_buttons %>
-  <%= form.input :email, disabled: true %>
-  <%= form.submit "Save" %>
+<% if flash[:notice].nil? %>
+<%= simple_form_for(@guest, class: "form")do |form| %>
+  <fieldset>
+    <%= form.input :status, collection: Hash[['Yes / Ja', 'No / Nee'].zip(Guest.statuses.keys)], as: :radio_buttons, label: "Will you be attending? <br> Ben je er bij?".html_safe %>
+    <%= form.input :name, disabled: true, label: "Your name <br> Uw naam".html_safe, placeholder: 'Naam/name' %>
+    <%= form.input :email, disabled: true, label: "Your email address <br> Uw email adres".html_safe, placeholder: 'Email' %>
+    <%= form.input :plus_one, disabled: true, collection: {'Yes / Ja' => 1, 'No / Nee' => 0}, as: :radio_buttons, label: "Do you want to bring someone else? <br> Wil je nog iemand meenemen?".html_safe %>
+    <%= form.input :plus_one_name, disabled: true, label: 'Extra Name <br> Extra Naam'.html_safe, placeholder: '+1 Naam/Name' %>
+    <div>
+      <%= form.submit "", class: 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>
 <% end %>

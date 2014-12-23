@@ -1,9 +1,89 @@
-// Place all the styles related to the Guests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #FAFAFA;
+}
 
-#new_guest {
-  div.disabled {
-    display: none;
+.row {
+  background-color: #FAFAFA;
+  height: 100%;
+
+  .invite {
+    padding: 0px;
+  }
+
+  .form {
+    padding: 10px;
+    color: #666;
+
+    label {
+      width: 100%;
+    }
+
+    abbr, div.disabled {
+      display: none;
+    }
+
+    input[type=submit] {
+      display: none;
+    }
+
+    .btn-primary {
+      background-color: #5065A9;
+    }
+  }
+
+  .guest_status, .guest_plus_one {
+    input {
+      display: none;
+    }
+
+    .radio {
+      float: left;
+      margin: 0;
+      margin-top: 1em;
+      padding: 0;
+      width: 50%;
+
+      label {
+        background-color: #5065A9;
+        float: left;
+        padding: 1em;
+        width: 100%;
+        text-align: center;
+        border: none;
+
+        &[for=guest_status_confirmed], &[for=guest_plus_one_1] {
+          color: white;
+          border-radius: 0.5em 0 0 0.5em;
+        }
+
+        &[for=guest_status_cancelled], &[for=guest_plus_one_0] {
+          background-color: #ddd;
+          color: #666;
+          border-radius: 0 0.5em 0.5em 0;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    background-color: white;
+  }
+
+  .container {
+    margin-top: 3em;
+  }
+
+  .row {
+    background-color: #043674;
+
+    .form {
+      color: white;
+    }
   }
 }
