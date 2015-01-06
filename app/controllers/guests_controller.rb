@@ -22,7 +22,7 @@ class GuestsController < ApplicationController
 
   def permitted_params
     params.permit(guest: [
-      :status, :email, :name
+      :status, :email, :name, :plus_one_name
     ])
   end
 end
